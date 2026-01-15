@@ -14,7 +14,7 @@ collection = chroma_client.get_or_create_collection(
 )
 
 user_query = input(
-    "What do you want to know about High-Level Test Case Generation using LLM?\n\n"
+    "Hello there, what do you wanna know? \n\n"
 )
 
 results = collection.query(
@@ -30,12 +30,12 @@ client = OpenAI(
 )
 
 system_prompt = f"""
-You are a helpful assistant. You answer questions about Automatic High-Level Test Case Generation using
+You are a helpful assistant. You answer questions about software testing using
 Large Language Models.
 
 RULES:
-- Answer ONLY using the provided context
-- Do NOT use outside knowledge
+# - Answer ONLY using the provided context
+# - Do NOT use outside knowledge
 - Do NOT hallucinate
 - If the answer is not in the context, say: "I don't know"
 

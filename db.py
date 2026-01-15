@@ -8,7 +8,10 @@ CHROMA_PATH = r"chroma_db"
 chroma_client = chromadb.PersistentClient(path=CHROMA_PATH)
 collection = chroma_client.get_or_create_collection(name="LLM_based_testing")
 
-loader = PyPDFDirectoryLoader(DATA_PATH)
+loader = PyPDFDirectoryLoader(
+    DATA_PATH,
+    extract_images=False,
+)
 
 raw_data = loader.load()
 
